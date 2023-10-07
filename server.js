@@ -136,6 +136,8 @@ async function consturctServer(moduleDefs) {
   const { CORS_ALLOW_ORIGIN } = process.env
   app.set('trust proxy', true)
 
+  app.use('/docs', express.static(path.join(__dirname, 'docs')))
+
   /**
    * CORS & Preflight request
    */
